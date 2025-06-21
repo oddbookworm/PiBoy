@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.w3schools.com" elementFormDefault="qualified" xmlns="http://www.w3schools.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="items" type="itemsType"/>
+  <xs:complexType name="itemsType">
+    <xs:all>
+      <xs:element name="weapons" type="weaponsType"/>
+      <xs:element name="mods" type="modsType"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="weaponsType">
+    <xs:all>
+      <xs:element name="small-guns" type="smallGunsType"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="baseWeaponType">
+    <xs:sequence>
+      <xs:element name="damage" type="xs:unsignedInt"/>
+      <xs:element name="damage-effects" type="xs:string" minOccurs="0"/>
+      <xs:element name="weight" type="xs:unsignedInt"/>
+      <xs:element name="damage-type" type="xs:string"/>
+      <xs:element name="cost" type="xs:unsignedInt"/>
+      <xs:element name="rarity" type="xs:unsignedInt"/>
+      <xs:element name="qualities" type="qualitiesType"/>
+      <xs:element name="description" type="xs:string"/>
+      <xs:element name="available-mods" type="availableModsType"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="smallGunsType">
+    <xs:sequence>
+      <xs:element name="gun" type="gunType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gunType">
+    <xs:complexContent>
+      <xs:extension base="baseWeaponType">
+        <xs:sequence>
+          <xs:element name="rate" type="xs:unsignedInt"/>
+          <xs:element name="range" type="xs:string"/>
+          <xs:element name="ammo" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="qualitiesType">
+    <xs:sequence>
+      <xs:element name="quality" type="xs:string" minOccurs="0" maxOccurs="3"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="availableModsType">
+    <xs:all>
+      <xs:element name="receivers" type="receiversType"/>
+      <xs:element name="barrels" type="barrelsType"/>
+      <xs:element name="grips" type="gripsType"/>
+      <xs:element name="sights" type="sightsType"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="receiversType">
+    <xs:sequence>
+      <xs:element name="receiver" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="barrelsType">
+    <xs:sequence>
+      <xs:element name="barrel" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gripsType">
+    <xs:sequence>
+      <xs:element name="grip" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sightsType">
+    <xs:sequence>
+      <xs:element name="sight" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modsType">
+    <xs:sequence>
+      <xs:element name="receivers" type="receiversModType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receiversModType">
+    <xs:sequence>
+      <xs:element name="receiver" type="ModType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModType">
+    <xs:sequence>
+      <xs:element name="effects" type="modEffectsType"/>
+      <xs:element name="weight" type="xs:string"/>
+      <xs:element name="cost" type="xs:string"/>
+      <xs:element name="perks" type="modPerksType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="modEffectsType">
+    <xs:all>
+      <xs:element name="damage" type="xs:string" minOccurs="0"/>
+      <xs:element name="rate" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="modPerksType">
+    <xs:sequence>
+      <xs:element name="perk" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3schools.com Items.xsd">
+  <weapons>
+    <small-guns>
+      <gun name=".44 Pistol">
+        <damage>6</damage>
+        <damage-effects>Vicious</damage-effects>
+        <weight>4</weight>
+        <damage-type>physical</damage-type>
+        <cost>99</cost>
+        <rarity>2</rarity>
+        <qualities>
+          <quality>Close Quarters</quality>
+        </qualities>
+        <description>
+          The .44 pistol is a double-action revolver, chambered to use the .44
+          Magnum cartridge. It&apos;s a powerful gun, though not as customizable as
+          other handguns. Due to their simple, rugged design, they&apos;re prized by
+          their owners, but not so uncomman as to be truly rare.
+        </description>
+        <test/>
+        <available-mods>
+          <receivers>
+            <receiver>Hardened</receiver>
+            <receiver>Powerful</receiver>
+            <receiver>Advanced</receiver>
+          </receivers>
+          <barrels>
+            <barrel>Snubnose Barrel</barrel>
+            <barrel>Bull Barrel</barrel>
+          </barrels>
+          <grips>
+            <grip>Comfort Grip</grip>
+          </grips>
+          <sights>
+            <sight>Short Scope</sight>
+            <sight>Reflex Sight</sight>
+            <sight>Recon Scope</sight>
+          </sights>
+        </available-mods>
+        <rate>1</rate>
+        <range>C</range>
+        <ammo>.44 Magnum</ammo>
+      </gun>
+    </small-guns>
+  </weapons>
+  <mods>
+    <receivers>
+      <receiver name="Hardened">
+        <effects>
+          <damage>+1</damage>
+        </effects>
+        <weight>+1</weight>
+        <cost>+20</cost>
+      </receiver>
+      <receiver name="Powerful">
+        <effects>
+          <damage>+2</damage>
+        </effects>
+        <weight>+1</weight>
+        <cost>+25</cost>
+        <perks>
+          <perk>Gun Nut 1</perk>
+        </perks>
+      </receiver>
+      <receiver name="Advanced">
+        <effects>
+          <damage>+3</damage>
+          <rate>+1</rate>
+        </effects>
+        <weight>+2</weight>
+        <cost>+35</cost>
+        <perks>
+          <perk>Gun Nut 2</perk>
+        </perks>
+      </receiver>
+    </receivers>
+  </mods>
+</items>

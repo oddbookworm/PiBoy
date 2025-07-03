@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="perks" type="perksType"/>
+  <xs:complexType name="perksType">
+    <xs:sequence>
+      <xs:element name="perk" type="perkType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="perkType">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string"/>
+      <xs:element name="requirements" type="requirementsType"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="requirementsType">
+    <xs:sequence>
+      <xs:element name="intelligence" type="xs:unsignedInt" minOccurs="0"/>
+      <xs:element name="level" type="xs:unsignedInt" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

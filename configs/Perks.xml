@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<perks>
+<perks xmlns="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./Perks.xsd">
   <perk name="Gun Nut 1">
     <description>
     You can modify small guns and heavy weapons with weapon mods.
     Unlocks rank 1 mods.
     </description>
     <requirements>
-    <intelligence>6</intelligence>
-    <level>2</level>
+      <intelligence>6</intelligence>
+      <level>2</level>
     </requirements>
   </perk>
   <perk name="Gun Nut 2">
@@ -16,8 +16,8 @@
     Unlocks rank 2 mods.
     </description>
     <requirements>
-    <intelligence>6</intelligence>
-    <level>6</level>
+      <intelligence>6</intelligence>
+      <level>6</level>
     </requirements>
   </perk>
   <perk name="Gun Nut 3">
@@ -26,8 +26,8 @@
     Unlocks rank 3 mods.
     </description>
     <requirements>
-    <intelligence>6</intelligence>
-    <level>10</level>
+      <intelligence>6</intelligence>
+      <level>10</level>
     </requirements>
   </perk>
   <perk name="Gun Nut 4">
@@ -36,8 +36,8 @@
     Unlocks rank 4 mods.
     </description>
     <requirements>
-    <intelligence>6</intelligence>
-    <level>14</level>
+      <intelligence>6</intelligence>
+      <level>14</level>
     </requirements>
   </perk>
 </perks>

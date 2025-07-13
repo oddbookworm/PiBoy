@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-from .items.guns import Gun
+from .items.guns import SmallGun
 
 def parse_items():
     tree = ET.parse('configs/Items.xml')
@@ -8,4 +8,4 @@ def parse_items():
     small_guns = weapons.find('small-guns')
     forty_four = small_guns.find('gun')
 
-    print(Gun(forty_four))
+    gun = SmallGun(forty_four)
